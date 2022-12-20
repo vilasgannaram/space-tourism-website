@@ -1,0 +1,126 @@
+@use '../../../scss' as *;
+
+.crew-layout-container {
+  width: 90%;
+  margin: 2rem auto 0px;
+  padding-bottom: 2rem;
+  text-align: center;
+
+  .crew-image-container {
+    width: 100%;
+    max-width: 327px;
+    height: 223px;
+    margin-inline: auto;
+
+    border-bottom: 2px solid rgba($color: $color-blue, $alpha: 0.1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    &.douglas {
+      background-image: url(../assets/image-douglas-hurley.png);
+    }
+    &.mark {
+      background-image: url(../assets/image-mark-shuttleworth.png);
+    }
+    &.victor {
+      background-image: url(../assets/image-victor-glover.png);
+    }
+    &.anousheh {
+      background-image: url(../assets/image-anousheh-ansari.png);
+    }
+  }
+
+  .crew-text-container {
+    width: 100%;
+    max-width: 350px;
+    margin: 5rem auto 0;
+
+    .crew-member-role {
+      font-family: $font-bellefair;
+      font-weight: 400;
+      line-height: 18.34px;
+      text-transform: uppercase;
+    }
+
+    .crew-member-name {
+      margin-top: 0.8rem;
+      font-family: $font-bellefair;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 27.5px;
+      text-transform: uppercase;
+    }
+
+    .crew-member-bio {
+      margin-top: 1.25rem;
+      color: $color-blue;
+      font-family: $font-barlow;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .crew-layout-container {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .crew-image-container {
+      margin-top: 7rem;
+      max-width: 532px;
+      height: 539px;
+    }
+
+    .crew-text-container {
+      max-width: 450px;
+
+      .crew-member-role {
+        font-size: 24px;
+        line-height: 27.5px;
+      }
+
+      .crew-member-name {
+        font-size: 40px;
+        line-height: 48.8px;
+      }
+
+      .crew-member-bio {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .crew-layout-container {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    width: 80%;
+
+    .crew-image-container {
+      margin: 0;
+      width: 50%;
+    }
+
+    .crew-text-container {
+      margin: 0;
+      max-width: 620px;
+      width: 50%;
+
+      .crew-member-name {
+        font-size: 56px;
+        line-height: 64.18px;
+      }
+      .crew-member-bio {
+        max-width: 450px;
+        font-size: 18px;
+        line-height: 2rem;
+      }
+    }
+  }
+}

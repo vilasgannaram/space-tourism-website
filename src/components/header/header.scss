@@ -1,0 +1,56 @@
+@use '../../scss' as *;
+
+.header {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 1.25rem;
+  left: 5%;
+
+  .thread {
+    display: none;
+    position: absolute;
+    top: 65%;
+    left: 3%;
+    transform: translate(-3%, -65%);
+    z-index: 30;
+    width: 40vw;
+    height: 1px;
+    background-color: rgba($color: $color-white, $alpha: 0.2);
+  }
+
+  .logo {
+    width: 40px;
+    z-index: 100;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: 95vw;
+    top: 0;
+
+    .logo {
+      width: 48px;
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    .thread {
+      display: block;
+    }
+    .logo {
+      padding-top: 2.25rem;
+    }
+  }
+}

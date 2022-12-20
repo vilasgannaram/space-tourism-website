@@ -1,0 +1,111 @@
+@use '../../scss' as *;
+
+.crew-container {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: url(./assets/background-crew-mobile.jpg) no-repeat center/cover;
+
+  .crew-heading {
+    font-weight: 400;
+    font-family: $font-barlow-condensed;
+    font-size: 16px;
+    line-height: 19.2px;
+
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+    text-align: center;
+
+    span {
+      color: $color-blue;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .crew-navigation {
+    position: absolute;
+    top: 410px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .crew-navigation-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+
+      .crew-navigation-list-item {
+        margin-inline: 0.8rem;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .crew-navigation-list-item-link {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          background-color: rgba($color: $color-white, $alpha: 0.17);
+
+          &:hover {
+            background-color: rgba($color: $color-white, $alpha: 0.5);
+          }
+
+          &.active {
+            background-color: rgba($color: $color-white, $alpha: 1);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .crew-container {
+    padding-top: 150px;
+    background-image: url(./assets/background-crew-tablet.jpg);
+
+    .crew-heading {
+      padding-left: 5%;
+      font-size: 20px;
+      line-height: 24px;
+      letter-spacing: 3.38px;
+      text-align: left;
+
+      span {
+        margin-right: 1rem;
+      }
+    }
+
+    .crew-navigation {
+      top: 550px;
+      max-width: 180px;
+
+      .crew-navigation-list {
+        .crew-navigation-list-item {
+          .crew-navigation-list-item-link {
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .crew-container {
+    background-image: url(./assets/background-crew-desktop.jpg);
+
+    .crew-heading {
+      padding-left: 10%;
+      font-style: 28px;
+      letter-spacing: 4.72px;
+    }
+
+    .crew-navigation {
+      top: 650px;
+      left: 10%;
+      transform: translateX(0);
+    }
+  }
+}

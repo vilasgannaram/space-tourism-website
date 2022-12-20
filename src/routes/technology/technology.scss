@@ -1,0 +1,126 @@
+@use '../../scss' as *;
+
+.technology-container {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: url(./assets/background-technology-mobile.jpg) no-repeat
+    center/cover;
+
+  .technology-heading {
+    font-family: $font-barlow-condensed;
+    font-weight: 400;
+    font-size: 16px;
+
+    line-height: 19.27px;
+    letter-spacing: 2.7px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      color: $color-blue;
+      font-weight: 700;
+    }
+  }
+
+  .technology-navigation {
+    position: absolute;
+    top: 330px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .technology-nav-list {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+      .technology-nav-list-item {
+        margin-inline: 0.5rem;
+
+        .technology-nav-list-item-link {
+          padding: 0.6rem 1rem;
+
+          font-family: $font-bellefair;
+          font-weight: 400;
+          font-size: 1rem;
+
+          line-height: 18.4px;
+          letter-spacing: 1px;
+          text-align: center;
+
+          border-radius: 50%;
+          border: 2px solid rgba($color: $color-white, $alpha: 0.25);
+
+          &:hover {
+            border-color: rgba($color: $color-white, $alpha: 1);
+          }
+
+          &.active {
+            color: $color-black;
+            background-color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .technology-container {
+    padding-top: 150px;
+    background-image: url(./assets/background-technology-tablet.jpg);
+
+    .technology-heading {
+      padding-left: 5%;
+
+      font-size: 20px;
+      line-height: 24px;
+
+      letter-spacing: 3.38px;
+      text-align: left;
+    }
+
+    .technology-navigation {
+      top: 560px;
+      .technology-nav-list {
+        .technology-nav-list-item {
+          margin-inline: 1rem;
+
+          .technology-nav-list-item-link {
+            padding-inline: 1.2rem;
+            font-size: 24px;
+            line-height: 27.5px;
+            letter-spacing: 1.5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .technology-container {
+    background-image: url(./assets/background-technology-desktop.jpg);
+
+    .technology-heading {
+      font-size: 28px;
+      line-height: 33.6px;
+      letter-spacing: 4.72px;
+      padding-left: 7%;
+    }
+
+    .technology-navigation {
+      top: 400px;
+      left: 6%;
+
+      .technology-nav-list {
+        flex-direction: column;
+
+        .technology-nav-list-item {
+          margin: 1.25rem 0;
+        }
+      }
+    }
+  }
+}

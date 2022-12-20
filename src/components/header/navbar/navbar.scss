@@ -1,0 +1,115 @@
+@use '../../../scss' as *;
+
+.primary-navigation {
+  .icon {
+    z-index: 10;
+    width: 24px;
+    position: relative;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  // only for mobile
+  .list-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70vw;
+    height: 100vh;
+
+    background-color: rgba($color: $color-white, $alpha: 0.1);
+    backdrop-filter: blur(1rem);
+    z-index: 1;
+  }
+
+  .list {
+    display: none;
+    list-style: none;
+    font-family: $font-barlow-condensed;
+
+    &.mobile-nav {
+      display: block;
+      position: absolute;
+      top: 20vh;
+      left: 35vw;
+      z-index: 20;
+
+      .list-item:not(:first-child) {
+        margin-top: 1.6rem;
+      }
+    }
+
+    .list-item {
+      font-size: 16px;
+      line-height: 19.2px;
+      letter-spacing: 2.7px;
+      text-transform: uppercase;
+
+      .link {
+        color: $color-white;
+        text-decoration: none;
+        .number {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .primary-navigation {
+    .icon {
+      display: none;
+    }
+
+    .list-wrapper {
+      display: none;
+    }
+
+    .list {
+      width: 55vw;
+      padding-inline: max(5%, 2rem);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background-color: rgba($color: $color-white, $alpha: 0.1);
+      backdrop-filter: blur(1rem);
+
+      .list-item {
+        padding: 2.5rem 0px 1.6rem;
+        border-bottom: 2px solid transparent;
+
+        .link {
+          padding-bottom: 1.6rem;
+
+          &.active {
+            border-bottom: 2px solid #fff;
+          }
+        }
+        .number {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .primary-navigation {
+    margin-top: 2rem;
+    .list {
+      padding-inline: max(15%, 2rem);
+      .list-item {
+        .number {
+          display: inline-block;
+          margin-right: 0.25rem;
+        }
+      }
+    }
+  }
+}

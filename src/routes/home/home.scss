@@ -1,0 +1,138 @@
+@use '../../scss' as *;
+
+.home-container {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: url(./assets/background-home-mobile.jpg) no-repeat center/cover;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+
+  .home-text-container {
+    width: 90vw;
+    max-width: 327px;
+
+    .home-sub-heading {
+      color: $color-blue;
+
+      font-family: $font-barlow-condensed;
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 19px;
+
+      letter-spacing: 2.7px;
+      text-transform: uppercase;
+    }
+
+    .home-main-heading {
+      margin: 1.5rem 0px 2rem;
+
+      font-size: 4.5rem;
+      font-weight: 400;
+      font-family: $font-bellefair;
+
+      line-height: 100px;
+      text-transform: uppercase;
+    }
+
+    .home-description {
+      color: $color-blue;
+      font-family: $font-barlow;
+      font-size: 15px;
+      line-height: 25px;
+    }
+  }
+
+  .explore-container {
+    .explore {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: $color-white;
+
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        border: 10px solid rgba($color: $color-white, $alpha: 0.5);
+      }
+
+      cursor: pointer;
+
+      h3 {
+        color: $color-black;
+
+        font-family: $font-bellefair;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 22.92px;
+
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home-container {
+    padding-top: 150px;
+    background-image: url(./assets/background-home-tablet.jpg);
+
+    .home-text-container {
+      max-width: 450px;
+
+      .home-sub-heading {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 3.38px;
+      }
+
+      .home-main-heading {
+        font-size: 150px;
+        line-height: 150px;
+      }
+
+      .home-description {
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+
+    .explore-container {
+      .explore {
+        width: 242px;
+        height: 242px;
+
+        h3 {
+          font-size: 2rem;
+          line-height: 36.6px;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home-container {
+    background-image: url(./assets/background-home-desktop.jpg);
+
+    flex-direction: row;
+    text-align: start;
+
+    .home-text-container {
+      padding-left: 3%;
+      width: 40%;
+    }
+    .explore-container {
+      padding: 8% 0 0 18%;
+      width: 40%;
+    }
+  }
+}
